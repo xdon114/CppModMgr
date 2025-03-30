@@ -1,6 +1,11 @@
 # xdon's c++ module manager
 建议搭配源代码阅读。
 
+### `ModG_Ver()`
+
+模块管理器的版本.这在每个版本都有效。
+0x0104表示1.04, 0x2025表示20.25
+
 ## 1.04
 
 ### `ModG_MBegin(ModuleName, NamesapceName)`
@@ -25,10 +30,6 @@
 
 注意其实际是 `using namespace`,
 可能造成标识符泄露.
-
-### `ModG_Ver()`
-
-模块管理器的版本
 
 ### 其他注意事项
 
