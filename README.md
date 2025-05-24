@@ -25,16 +25,15 @@ For example:
 MOD_BEG(mod);
 // -------- module namespace --------
 // You can see it as in a namespace(It is actually).
-using namespace std; /*You can do this inside mod.*/
 void f(int x){
-  cout << x;
+  std::cout << x;
 }
 MOD_END(mod);
 // -------- globals ------
 #include /*modmgr_undef.hpp*/
 ```
 
-**WARNING: ALL codes between `MOD_BEG` and `MOD_END` are defined inside module but NOT globals. Especially, do NOT include files inside module.**
+**WARNING: ALL codes between `MOD_BEG` and `MOD_END` are defined inside module but NOT globals. Especially, do NOT include files inside modules.**
 
 Not advised to define both globals and modules in one file, 
 as it is confusing. 
@@ -47,6 +46,7 @@ Define module detail between `DET_BEG(MOD)` and `DET_END(MOD)`. It is defined in
 ```cpp
 DET_BEG(mod);
 // -------- module details --------
+void g(int);
 DET_END(mod);
 // -------- globals --------
 ```
@@ -81,14 +81,12 @@ int main() {
 #include /*modmgr.hpp*/
 DET_BEG(mod);
 // -------- detail ns mod --------
-#include /*modmgr_undef.hpp*/ // undef it immediately
 
 using namespace std;
 void g(int x) {
   cout << x << endl;
 }
 
-#include /*modmgr.hpp*/
 DET_END(mod);
 // -------- globals --------
 #include /*modmgr_undef.hpp*/
@@ -104,7 +102,6 @@ DET_END(mod);
 #include /*modmgr.hpp*/
 MOD_BEG(mod);
 // -------- module ns mod --------
-#include /*modmgr_undef.hpp*/ // undef it immediately
 
 // using namespace std; // This pollutes the module namespace
 void f(int x) {
@@ -113,7 +110,6 @@ void f(int x) {
   std::cout << x << endl;
 }
 
-#include /*modmgr.hpp*/
 MOD_END(mod);
 // -------- globals --------
 #include /*modmgr_undef.hpp*/
@@ -126,11 +122,11 @@ MOD_END(mod);
 int main() {
 #include /*modmgr.hpp*/
   MOD_USE(mod);
-#include /*modmgr_undef.hpp*/
+#include /*modmgr_undef.hpp*/ // undef immediately
   mod::f(100);
 #include /*modmgr.hpp*/
   MOD_USE_ALL(mod);
-#include /*modmgr_undef.hpp*/
+#include /*modmgr_undef.hpp*/ // undef immediately
   f(100);
 }
 ```
@@ -141,3 +137,6 @@ Expected output:
 100
 100
 ```
+
+### Reference
+**TBD**
