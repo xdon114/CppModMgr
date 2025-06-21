@@ -1,5 +1,5 @@
-#ifndef MODMGR_HPP
-#define MODMGR_HPP
+#ifndef CPPMODMGR_000101_MODMGR_HPP000101
+#define CPPMODMGR_000101_MODMGR_HPP000101
 
 #define MODMGR_VER 0x000101L
 #define NS_BEG(NS) namespace NS {
@@ -14,4 +14,4 @@
 #define MOD_USE_ALL(MOD) using namespace _MOD_NS(MOD)
 #define DET_USE() using namespace _det;
 
-#endif // #ifndef MODMGR_HPP
+#endif // file protection
