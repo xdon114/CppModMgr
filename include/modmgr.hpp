@@ -1,6 +1,7 @@
 #ifndef CPPMODMGR_MODMGR_HPP
 #define CPPMODMGR_MODMGR_HPP
 
+#define CPPMODMGR_VER 0x000200L
 #define _MOD_BEGIN(M) 			namespace modmgr_ns {
 #define _MOD_END(M)				}
 #define _MOD_NS(M) 				::modmgr_ns::M
