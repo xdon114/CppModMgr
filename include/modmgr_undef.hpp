@@ -1,4 +1,4 @@
-#undef MODMGR_HPP
+#undef CPPMODMGR_000101_MODMGR_HPP000101
 #undef MODMGR_VER
 #undef NS_BEG
 #undef NS_END
