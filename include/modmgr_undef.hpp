@@ -1,13 +1,10 @@
-#undef MODMGR_HPP
-#undef MODMGR_VER
-#undef NS_BEG
-#undef NS_END
-#undef MOD_BEG
-#undef MOD_END
-#undef DET_BEG
-#undef DET_END
-#undef _MOD_CONT_NS
+#undef CPPMODMGR_MODMGR_HPP
+
+#undef _MOD_BEGIN
+#undef _MOD_END
 #undef _MOD_NS
-#undef MOD_USE
-#undef MOD_USE_ALL
-#undef DET_USE
+#undef MOD_BEGIN
+#undef MOD_END
+#undef USE_MOD
+#undef ALL_FROM_MOD
+#undef FROM_MOD
